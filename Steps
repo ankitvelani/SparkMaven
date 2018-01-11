@@ -1,0 +1,45 @@
+
+================= Creating Maven Spark Application =================
+
+
+Steps 1 :  Create Maven Project in Eclipse
+
+GroupID : mavenspark
+Artifact ID : wordcount
+
+
+Steps 2 :  Update pom.xml file.
+
+
+<dependencies>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+</dependencies>
+
+
+Steps 3 :  Change JRE Version
+
+		 jre and jdk should be > 7.0
+
+Steps 4 :  Create Maven Package
+
+		 mvn package
+
+Steps 5 :  Write JavaCode
+		Create class name call WordCount under default package.
+		Copy pase the java code into WordCount.java
+		Save
+Steps 6 :  ReCreate Maven Package
+		
+		mvn package
+
+Steps 7 :  Execution
+
+spark-submit --class WordCount --master local[2] /home/ubuntu/workspace/wordcount/target/wordcount-0.0.1-SNAPSHOT.jar /home/ubuntu/Desktop/mvn/input.txt /home/ubuntu/Desktop/mvn/output
+
+Step 8 : Output directory will create inside mvn directory.
+
+
